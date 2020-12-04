@@ -1,0 +1,18 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /bookstore
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/BookStore_DB
+    username: root
+    password: qwerty1234
+
+thymeleaf:
+  enabled: true
+  encoding: UTF-8
+  mode: HTML5
+  prefix: classpath:/templates/
+  suffix: .html
