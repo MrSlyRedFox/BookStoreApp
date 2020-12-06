@@ -8,4 +8,5 @@ import ru.rickSanchez.entities.Book;
 
 @Repository
 public interface BookRepository extends JpaRepository<Book, Integer>, JpaSpecificationExecutor<Book> {
+
 }

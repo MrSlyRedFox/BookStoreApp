@@ -1,12 +1,15 @@
 package ru.rickSanchez.entities;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -33,15 +36,20 @@ public class Author {
     @Column(name = "phone")
     private String phone;
 
+//    @ManyToMany
+//    @JoinColumn(name = "book_id")
+//    private List<Book> book_id;
+
     public Author() {
     }
 
-    public Author(String firstname, String lastname, LocalDate birthdate, String email, String phone) {
+    public Author(String firstname, String lastname, LocalDate birthdate, String email, String phone, List<Book> book_id) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.birthdate = birthdate;
         this.email = email;
         this.phone = phone;
+        //this.book_id = book_id;
     }
 
     public Integer getAuthor_id() {

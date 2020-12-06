@@ -19,7 +19,7 @@ public class BookController {
     }
 
     @GetMapping()
-    public String addProduct(
+    public String addBook(
             Model model
     ) {
         model.addAttribute("book", new Book());
