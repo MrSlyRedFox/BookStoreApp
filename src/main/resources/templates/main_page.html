@@ -1,10 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
 	<meta charset="UTF-8">
-	<title>Title</title>
+	<link rel="stylesheet" th:href="@{/css/styles.css}" >
+	<title>BookStore</title>
+	<style>
+        .scale {
+            transition: 1s
+        }
+
+        .scale:hover {
+            transform: scale(1.5);
+        }
+	</style>
 </head>
 <body>
+	
+<div>
+	<img id="logo_books" th:src="@{/images/logo_books.jpg}" width="110">
+	<h1 id="header_name">BestBooks</h1>
+</div>
+
+<div>
+	<img id="icon_login" th:src="@{/images/identity.jpg}" width="30">
+	<p id="name_login"><a href="login">sign in</a></p>
+	
+	<img id="icon_basket" th:src="@{/images/basket.png}" height="38">
+	<p id="name_basket"><a href="storeBasket">basket</a></p>
+</div>
+<tr th:each="b : ${books}">
+
+</tr>
+
+<!--<div id="left" class="grid">-->
+<!--	<div>-->
+<!--		<img th:src="@{/images/darkElf.jpg}" width="200" class="scale" >-->
+<!--	</div>-->
+<!--	-->
+<!--	<div>-->
+<!--		<img th:src="@{/images/lafcraft.jpg}" width="200" class="scale">-->
+<!--	</div>-->
+<!--	-->
+<!--	<div>-->
+<!--		<img th:src="@{/images/tom-soyer_-M.-Tven.jpg}" width="200" class="scale">-->
+<!--	</div>-->
+<!--	-->
+<!--	-->
+<!--	<div>-->
+<!--		<img th:src="@{/images/harrypotterprince.jpg}" width="200" class="scale">-->
+<!--	</div>-->
+<!--	-->
+<!--	<div>-->
+<!--		<img th:src="@{/images/harrypotter.jpg}" width="200" class="scale">-->
+<!--	</div>-->
+<!--	-->
+<!--	<div>-->
+<!--		<img th:src="@{/images/великий-гетсби.jpg}" width="200" class="scale">-->
+<!--	</div>-->
+<!--	-->
+<!--	<div>-->
+<!--		<img th:src="@{/images/steve-jobs.jpg}" width="200" class="scale">-->
+<!--	</div>-->
+<!--	-->
+<!--	<div>-->
+<!--		<img th:src="@{/images/TheLordOfTheRing.png}" width="200" class="scale">-->
+<!--	</div>-->
+<!--	-->
+<!--	<div>-->
+<!--		<img th:src="@{/images/Метро2033.jpg}" width="200" class="scale">-->
+<!--	</div>-->
+<!--	-->
+<!--	<div>-->
+<!--		<img th:src="@{/images/Алгоритмы Рук.png}" width="200" class="scale">-->
+<!--	</div>-->
+<!--	-->
+<!--	<div>-->
+<!--		<img th:src="@{/images/Java Полное руководство.png}" width="200" class="scale">-->
+<!--	</div>-->
+<!--	-->
+<!--	<div>-->
+<!--		<img th:src="@{/images/Метро2035.jpg}" width="200" class="scale">-->
+<!--	</div>-->
+<!--	-->
+<!--</div>-->
+<div id="header_menu" class="headerMenu">
+	Меню
+</div>
+
+<!--<nav aria-label="Page navigation">-->
+<!--	<ul class="pagination">-->
+<!--		<li class="page-item" th:classappend="${books.isFirst() ? 'disabled' : ''}">-->
+<!--			<a class="page-link"-->
+<!--			   th:href="@{'/books?p=' + ${books.previousOrFirstPageable().getPageNumber() + 1} + ${filterDefinition}}">Назад</a>-->
+<!--		</li>-->
+<!--		-->
+<!--		<li class="page-item" th:classappend="${books.getNumber() + 1 == i ? 'active' : ''}"-->
+<!--		    th:each="i : ${#numbers.sequence(1, books.getTotalPages())}">-->
+<!--			<a class="page-link" th:text="${i}" th:href="@{'/books?p=' + ${i} + ${filterDefinition}}"></a>-->
+<!--		</li>-->
+<!--		-->
+<!--		<li class="page-item"  th:classappend="${books.isLast() ? 'disabled' : ''}">-->
+<!--			<a class="page-link"-->
+<!--			   th:href="@{'/books?p='+ ${books.nextOrLastPageable().getPageNumber() + 1} + ${filterDefinition}}">Вперед</a>-->
+<!--		</li>-->
+<!--	</ul>-->
+<!--</nav>-->
 
 </body>
 </html>

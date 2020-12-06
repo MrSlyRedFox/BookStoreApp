@@ -1,5 +1,7 @@
 package ru.rickSanchez.entities;
 
+import java.time.LocalDate;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,12 +10,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "customers_tbl")
-public class Customer {
+@Table(name = "authors_tbl")
+public class Author {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "customer_id")
-    private Integer customer_id;
+    @Column(name = "author_id")
+    private Integer author_id;
 
     @Column(name = "firstname")
     private String firstname;
@@ -21,28 +24,32 @@ public class Customer {
     @Column(name = "lastname")
     private String lastname;
 
-    @Column(name = "phone")
-    private String phone;
+    @Column(name = "birthdate")
+    private LocalDate birthdate;
 
     @Column(name = "email")
     private String email;
 
-    public Customer() {
+    @Column(name = "phone")
+    private String phone;
+
+    public Author() {
     }
 
-    public Customer(String firstname, String lastname, String phone, String email) {
+    public Author(String firstname, String lastname, LocalDate birthdate, String email, String phone) {
         this.firstname = firstname;
         this.lastname = lastname;
-        this.phone = phone;
+        this.birthdate = birthdate;
         this.email = email;
+        this.phone = phone;
     }
 
-    public Integer getCustomer_id() {
-        return customer_id;
+    public Integer getAuthor_id() {
+        return author_id;
     }
 
-    public void setCustomer_id(Integer customer_id) {
-        this.customer_id = customer_id;
+    public void setAuthor_id(Integer author_id) {
+        this.author_id = author_id;
     }
 
     public String getFirstname() {
@@ -61,12 +68,12 @@ public class Customer {
         this.lastname = lastname;
     }
 
-    public String getPhone() {
-        return phone;
+    public LocalDate getBirthdate() {
+        return birthdate;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setBirthdate(LocalDate birthdate) {
+        this.birthdate = birthdate;
     }
 
     public String getEmail() {
@@ -77,8 +84,16 @@ public class Customer {
         this.email = email;
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
     @Override
     public String toString() {
-        return "Customer{" + "customer_id=" + customer_id + ", firstname='" + firstname + '\'' + ", lastname='" + lastname + '\'' + ", phone='" + phone + '\'' + ", email='" + email + '\'' + '}';
+        return "Author{" + "author_id=" + author_id + ", firstname='" + firstname + '\'' + ", lastname='" + lastname + '\'' + ", birthdate=" + birthdate + ", email='" + email + '\'' + ", phone='" + phone + '\'' + '}';
     }
 }

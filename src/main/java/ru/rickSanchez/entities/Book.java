@@ -5,11 +5,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
 @Entity
-@Table(name = "book_tbl")
+@Table(name = "books_tbl")
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,6 +23,10 @@ public class Book {
     //@NotEmpty
     @Column(name = "title")
     private String title;
+
+    @ManyToMany
+    @Column(name = "author_id")
+    private String author_id;
 
     @Column(name = "description")
     private String description;
